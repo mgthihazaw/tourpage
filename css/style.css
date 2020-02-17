@@ -18,6 +18,7 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 30px;
+  backface-visibility: hidden;
 }
 .header {
   height: 95vh;
@@ -46,7 +47,7 @@ body {
   transform: translate(-50%, -50%);
 }
 .header-primary {
-  color: rgb(223, 235, 226);
+  color: #fff;
   text-transform: uppercase;
 }
 .header-primary-main {
@@ -54,10 +55,56 @@ body {
   font-size: 60px;
   font-weight: 700;
   letter-spacing: 35px;
+  animation-name: leftInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /*
+   animation-delay: 2s;
+    animation-iteration-count: 2; 
+  */
 }
 .header-primary-sub {
   display: block;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  animation-name: rightInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes leftInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+    color: rgb(114, 214, 167);
+  }
+  60% {
+  }
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    color: rgb(203, 224, 211);
+  }
+}
+@keyframes rightInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+    color: rgb(114, 214, 167);
+  }
+  60% {
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    color: rgb(203, 224, 211);
+  }
 }

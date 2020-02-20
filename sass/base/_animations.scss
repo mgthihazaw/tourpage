@@ -1,0 +1,47 @@
+//KeyFrame
+@keyframes leftInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-20rem);
+      color: $light-primary;
+    }
+    60% {
+    }
+    80% {
+      transform: translateX(1rem);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+      color: $white;
+    }
+  }
+  @keyframes rightInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(20rem);
+      color: $light-primary;
+    }
+    60% {
+    }
+    80% {
+      transform: translateX(-1rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+      color: $white;
+    }
+  }
+  @keyframes bottomInTop {
+    0% {
+      opacity: 0;
+      transform: translateY(10rem);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }

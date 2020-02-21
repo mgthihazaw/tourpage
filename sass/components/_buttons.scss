@@ -46,4 +46,30 @@
       z-index: -1;
       transition: all 0.1s;
     }
+
+    
+  }
+  .btn-text{
+   &:link,&:visited{
+    font-size: $default-font-size;
+    border-bottom: 1px solid $primary;
+    display: inline-block;
+    padding: .7rem;
+    font-weight:700;
+    text-decoration: none;
+    color: $primary;
+    transition: all 0.3s;
+    
+    
+   }
+   &:hover{
+     background-color: $primary;
+     color: $white;
+     box-shadow: .2rem .5rem 1rem rgba($black, 0.3);
+     transform:translateY(-3px);
+   }
+   &:active{
+    box-shadow: .1rem .3rem 0.7rem rgba($black, 0.3);
+    transform:translateY(0);
+   }
   }

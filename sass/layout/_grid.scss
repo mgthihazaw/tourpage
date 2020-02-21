@@ -1,7 +1,7 @@
 .row{
     max-width:$grid-width;
-    background-color: rgb(123, 128, 124);
-    color:black;
+    // background-color: rgb(123, 128, 124);
+    // color:black;
     margin : 0 auto;
     
 
@@ -13,7 +13,7 @@
 
     [class^="col-"]{
         float:left;
-        background-color: rgb(99, 138, 189);
+        // background-color: rgb(99, 138, 189);
         height:12rem;
         &:not(:last-child){
             margin-right: $h-gutter;

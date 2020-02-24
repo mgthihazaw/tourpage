@@ -112,14 +112,81 @@ body {
   margin-bottom: 4rem; }
 
 .card {
-  perspective: 150rem; }
+  perspective: 145rem;
+  height: 55rem;
+  position: relative; }
   .card__slide {
     background-color: #fff;
-    height: 50rem;
-    transition: all 0.8s; }
-  .card:hover .card__slide {
-    transform: rotateY(180deg);
-    background-color: green; }
+    height: 55rem;
+    font-size: 2rem;
+    transition: transform 0.5s ease;
+    color: #b6aaaa;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__slide--front {
+      background-color: #fff; }
+    .card__slide--back {
+      background-color: #ffb900;
+      transform: rotateY(-180deg); }
+      .card__slide--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__slide--back-2 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+      .card__slide--back-3 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+  .card:hover .card__slide--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__slide--back {
+    transform: rotateY(0); }
+  .card__picture {
+    height: 23rem;
+    background-size: cover;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../img/nat-5.jpg"); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../img/nat-6.jpg"); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../img/nat-7.jpg"); }
+  .card__heading {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #fff;
+    position: absolute;
+    top: 18rem;
+    right: 2rem; }
+  .card__heading-span {
+    padding: 0.5rem 1rem; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.9), rgba(255, 119, 48, 0.9)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.9), rgba(86, 67, 250, 0.9)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.9), rgba(40, 180, 133, 0.9)); }
+  .card__details {
+    margin: 1rem auto;
+    font-size: 1.8rem;
+    font-weight: 400;
+    width: 70%; }
+    .card__details > ul {
+      list-style: none; }
+      .card__details > ul > li {
+        text-align: center;
+        padding: 1rem; }
+        .card__details > ul > li:not(:last-child) {
+          border-bottom: 1px solid #e6e0e0; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -239,6 +306,7 @@ body {
   background-position: top;
   /* (top-left ,top-right ,bottom-right,bottom-left)*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-background-clip: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
   .header__logo-box {
     position: absolute;
@@ -254,7 +322,7 @@ body {
     text-align: center; }
 
 .row {
-  max-width: 136rem;
+  max-width: 124rem;
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }

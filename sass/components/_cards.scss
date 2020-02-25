@@ -5,12 +5,15 @@
   // box-shadow: 0 1.5rem 4rem rgba($black,0.5);
   height: 55rem;
   position: relative;
+  border-top-right-radius:0.2rem;
+  border-top-left-radius: 0.2rem;
+  overflow:hidden;
   &__slide {
     background-color: $white;
     height: 55rem;
     font-size: 2rem;
     transition: transform 0.5s ease ;
-    color: rgb(182, 170, 170);
+    color: rgb(255, 253, 253);
 
     position:absolute;
     top:0;
@@ -99,6 +102,7 @@
      width:70%;
      
      &>ul{
+       color:$grey;
         list-style: none;
         &>li{
             text-align:center;
@@ -114,5 +118,19 @@
      top:50%;
      left:50%;
      transform:translateX(-50%) translateY(-50%);
+     width:90%;
+     text-align:center;
+ }
+ &__price-box{
+   
+   margin-bottom:10rem;
+}
+&__price-only{
+   font-style: to-upper-case($string: "");
+}
+ &__price-value{
+  font-size: 6rem;
+  font-weight: 100;
+    color:$white;
  }
 }

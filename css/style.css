@@ -323,6 +323,31 @@ body {
   .feature-box:hover {
     transform: translateY(-1.2rem); }
 
+.story {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0.2rem 1.5rem 4rem rgba(0, 0, 0, 0.5);
+  padding: 6rem;
+  padding-left: 9rem;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    background-color: #6f9aa5;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    transform: translate(-3rem) skewX(12deg); }
+  .story__img {
+    height: 100%; }
+  .story__text {
+    transform: skewX(12deg); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
@@ -388,5 +413,9 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 10rem 0;
+  padding: 15rem  0;
   margin-top: -12rem; }
+
+.section-stories {
+  background-color: #f7f7f7;
+  padding: 15rem 0; }

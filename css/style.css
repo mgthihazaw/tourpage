@@ -111,6 +111,9 @@ body {
 .m-b-4 {
   margin-bottom: 4rem; }
 
+.m-b-6 {
+  margin-bottom: 6rem; }
+
 .m-t-8 {
   margin-top: 8rem; }
 
@@ -387,6 +390,72 @@ body {
     width: 100%;
     object-fit: cover; }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.5rem;
+  padding: 1.5rem 2.5rem;
+  width: 90%;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: rgba(119, 119, 119, 0.2);
+  color: inherit;
+  transition: all 0.3s; }
+  .form__input:focus {
+    outline: none;
+    border-bottom: 3px solid #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    color: #999;
+    font-family: inherit; }
+
+.form__label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: .7;
+  transition: all 0.3s;
+  display: block; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-label {
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 3px solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: -4;
+  left: 0; }
+  .form__radio-button::after {
+    height: 1.3rem;
+    content: "";
+    width: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
@@ -469,3 +538,6 @@ body {
   height: 50rem;
   box-shadow: 0 1.4rem 4rem rgba(0, 0, 0, 0.4);
   border-radius: 0.3rem; }
+  .book__form {
+    width: 50%;
+    padding: 6rem; }

@@ -1,0 +1,85 @@
+.form{
+    &__group:not(:last-child){
+      margin-bottom: 2rem;
+    }
+
+    &__input{
+        font-size : 1.5rem;
+        padding:1.5rem 2.5rem;
+        // display: block;
+        width:90%;
+        border-radius: 0.4rem;
+        border:none;
+        background-color: rgba($grey,0.2);
+        color:inherit;
+        transition: all 0.3s;
+
+        &:focus{
+            outline:none;
+            border-bottom:3px solid $primary;
+            box-shadow: 0 1rem 2rem rgba($black, 0.3);
+            &:invalid{
+                border-bottom: 3px solid $secondary-dark;
+            }
+        }
+        &::-webkit-input-placeholder{
+            color:$grey-dark;
+            font-family:inherit;
+        }
+        
+        
+    }
+    &__label{
+       font-size: 1.3rem;
+       font-weight: 700;
+       margin-left: 2rem;
+       margin-top: .7;
+       transition: all 0.3s;
+       display:block;
+    }
+    &__input:placeholder-shown + &__label{
+     opacity:0;
+     visibility: hidden;
+     transform: translateY(-4rem);
+
+    }
+    &__radio-group{
+        width:49%;
+        display:inline-block;
+    }
+    &__radio-label{
+        font-size: $default-font-size;
+        cursor:pointer;
+        position:relative;
+        padding-left:4.5rem;
+    }
+    
+    &__radio-button{
+        height: 3rem;
+        width:3rem;
+        border:3px solid $primary;
+        border-radius:50%;
+        display:inline-block;
+        // transform:translateX(-2.4rem) translateY(0.8rem);
+        position: absolute;
+        top: -4;
+        left:0;
+        &::after{
+          height:1.3rem;
+          content: "";
+          width:1.3rem;
+          border-radius: 50%;
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          background-color: $primary;
+          opacity: 0;
+
+        }
+       
+    }
+    // &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    //     opacity: 1;
+    // }
+}

@@ -1,23 +1,27 @@
 .form{
     &__group:not(:last-child){
       margin-bottom: 2rem;
+      box-sizing: border-box;
+      height:100%;
     }
 
     &__input{
         font-size : 1.5rem;
         padding:1.5rem 2.5rem;
-        // display: block;
+        display: block;
         width:90%;
-        border-radius: 0.4rem;
+        height:100%;
+        border-radius: 0.2rem;
         border:none;
-        background-color: rgba($grey,0.2);
+        background-color: rgba($white,0.8);
         color:inherit;
         transition: all 0.3s;
+        border-bottom: 3px solid  rgba($white,0.8);
 
         &:focus{
             outline:none;
             border-bottom:3px solid $primary;
-            box-shadow: 0 1rem 2rem rgba($black, 0.3);
+            box-shadow: 0 1rem 2rem rgba($black, .2);
             &:invalid{
                 border-bottom: 3px solid $secondary-dark;
             }
@@ -30,10 +34,10 @@
         
     }
     &__label{
-       font-size: 1.3rem;
+       font-size: 1.2rem;
        font-weight: 700;
        margin-left: 2rem;
-       margin-top: .7;
+       margin-top: .5;
        transition: all 0.3s;
        display:block;
     }
@@ -42,6 +46,9 @@
      visibility: hidden;
      transform: translateY(-4rem);
 
+    }
+    &__radio-input{
+        display: none;
     }
     &__radio-group{
         width:49%;
@@ -79,7 +86,7 @@
         }
        
     }
-    // &__radio-input:checked ~ &__radio-label &__radio-button::after {
-    //     opacity: 1;
-    // }
+    &__radio-input:checked + &__radio-label>&__radio-button::after {
+        opacity: 1;
+    }
 }

@@ -1,5 +1,7 @@
 .navigation {
+  backface-visibility: hidden;
   &__checkbox {
+    display:none;
   }
   &__button {
     background-color: $white;
@@ -9,6 +11,10 @@
     top: 6rem;
     right: 6rem;
     z-index: 2000;
+    border-radius: 50%;
+    box-shadow:0 1rem 3rem rgba($black,0.1);
+    text-align:center;
+    cursor: pointer;
   }
   &__background {
     height: 6rem;
@@ -20,15 +26,20 @@
     right: 6.5rem;
     z-index: 1000;
 
-    transform: scale(80);
+    // transform: scale(80);
+    transition: transform .8s ;
   }
   &__nav {
       height:100vh;
-      width:100%;
+      
       position: fixed;
       top:0;
-      right:0;
+      left:0;
       z-index: 1500;
+      
+      opacity:0;
+      width:0;
+      transition:all .8s cubic-bezier(.05,1.5,.56,1.29);
   }
   &__list {
       position: absolute;
@@ -50,7 +61,7 @@
         text-transform: uppercase;
         letter-spacing: 0.5rem;
         background-image: linear-gradient(120deg,transparent 0%,transparent 50%,$white 50%);
-        background-size: 220%;
+        background-size: 300%;
         transition: all .4s;
         display: inline-block;
       }
@@ -63,4 +74,60 @@
       
 
   }
+
+  //Functionality
+  &__checkbox:checked ~ &__background{
+    transform: scale(80);
+  }
+  &__checkbox:checked ~ &__nav{
+    opacity:1;
+    width:100%;
+  }
+
+  //Icon
+
+  &__icon{
+    position:relative;
+    margin-top:3.5rem;
+    &,&::before,&::after{
+      width: 3rem;
+      height:2px;
+      background-color: $grey-dark-1;
+      display:inline-block;
+      
+    }
+    &::before,&::after{
+      content:"";
+      position: absolute;
+      left:0;
+      transition: all 0.2s;
+    }
+    &::before{
+      top: -.8rem;
+    }
+    &::after{
+      top: .8rem;
+    }
+  }
+
+  &__button:hover &__icon::before{
+    top:-1rem;
+  }
+  &__button:hover &__icon::after{
+    top:1rem;
+  }
+
+  &__checkbox:checked + &__button &__icon{
+    background-color: transparent;
+    
+  }
+  &__checkbox:checked + &__button &__icon::before{
+    transform: rotate(135deg);
+    top: 0;
+  }
+  &__checkbox:checked + &__button &__icon::after{
+    transform: rotate(-135deg);
+    top: 0;
+  }
+  
 }
